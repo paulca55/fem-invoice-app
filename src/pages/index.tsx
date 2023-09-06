@@ -1,3 +1,25 @@
+import styled from 'styled-components';
+import React, { useContext } from 'react';
+import { ThemeModeContext } from '@/contexts/ThemeModeProvider';
+import { THEME_MODE } from '@/types/themes';
+
+const H1 = styled.h1`
+  color: ${({ theme }) => theme.text};
+`;
+
+const Button = styled.button`
+  background-color: ${({ theme }) => theme.background};
+`;
+
 export default function Home() {
-  return <main></main>;
+  const { themeMode, toggleThemeMode } = useContext(ThemeModeContext);
+
+  return (
+    <main>
+      <H1>This is a heading</H1>
+      <Button onClick={() => toggleThemeMode()}>
+        Toggle {themeMode === THEME_MODE.dark ? 'light' : 'dark'} mode
+      </Button>
+    </main>
+  );
 }

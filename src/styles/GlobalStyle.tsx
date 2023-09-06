@@ -36,7 +36,7 @@ const GlobalStyle = createGlobalStyle`
   /* Set core body defaults */
   body {
     min-height: 100vh;
-    text-rendering: optimizeSpeed;
+    text-rendering: optimizespeed;
     line-height: 1.5;
   }
 
@@ -65,6 +65,7 @@ const GlobalStyle = createGlobalStyle`
     html:focus-within {
       scroll-behavior: auto;
     }
+
     *,
     *::before,
     *::after {
@@ -73,6 +74,11 @@ const GlobalStyle = createGlobalStyle`
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
     }
+  }
+
+  /* Create a root stacking context */
+  #__next {
+    isolation: isolate;
   }
 `;
 
