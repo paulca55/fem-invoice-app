@@ -6,14 +6,23 @@ export const THEME_MODE = {
 export type ThemeMode = keyof typeof THEME_MODE;
 
 export type Colours = {
-  primary: string;
-  secondary: string;
+  '01': string;
+  '02': string;
+  '03': string;
+  '04': string;
+  '05': string;
+  '06': string;
+  '07': string;
+  '08': string;
+  '09': string;
+  '10': string;
+  '11': string;
+  '12': string;
 };
 
 export type Theme = {
+  hslColours: Colours;
   colours: Colours;
-  text: string;
-  background: string;
 };
 
 export type Themes = Record<ThemeMode, Theme>;

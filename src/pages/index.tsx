@@ -14,12 +14,5 @@ const Button = styled.button`
 export default function Home() {
   const { themeMode, toggleThemeMode } = useContext(ThemeModeContext);
 
-  return (
-    <main>
-      <H1>This is a heading</H1>
-      <Button onClick={() => toggleThemeMode()}>
-        Toggle {themeMode === THEME_MODE.dark ? 'light' : 'dark'} mode
-      </Button>
-    </main>
-  );
+  return <main></main>;
 }
