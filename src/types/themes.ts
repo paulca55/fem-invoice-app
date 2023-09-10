@@ -23,6 +23,7 @@ export type Colours = {
 export type Theme = {
   hslColours: Colours;
   colours: Colours;
+  background: string;
 };
 
 export type Themes = Record<ThemeMode, Theme>;

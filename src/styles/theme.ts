@@ -34,10 +34,12 @@ const themes: Themes = {
   light: {
     hslColours,
     colours,
+    background: '#fff',
   },
   dark: {
     hslColours,
     colours,
+    background: colours['12'],
   },
 };
 

@@ -37,7 +37,11 @@ const GlobalStyle = createGlobalStyle`
   body {
     min-height: 100vh;
     text-rendering: optimizespeed;
-    line-height: 1.5;
+    line-height: 1.4;
+    font-weight: 500;
+    font-size: 0.8125rem;
+    letter-spacing: -0.00625em;
+    background-color: ${({ theme }) => theme.background};
   }
 
   /* A elements that don't have a class get default styles */
@@ -80,6 +84,8 @@ const GlobalStyle = createGlobalStyle`
   #__next {
     isolation: isolate;
   }
+  
+  /* Heading sizes
 `;
 
 export { GlobalStyle };
