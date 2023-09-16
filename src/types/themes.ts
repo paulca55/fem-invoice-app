@@ -1,3 +1,5 @@
+import { DefaultTheme } from 'styled-components';
+
 export const THEME_MODE = {
   light: 'light',
   dark: 'dark',
@@ -5,7 +7,7 @@ export const THEME_MODE = {
 
 export type ThemeMode = keyof typeof THEME_MODE;
 
-export type Colours = {
+export type Colors = {
   '01': string;
   '02': string;
   '03': string;
@@ -21,9 +23,9 @@ export type Colours = {
 };
 
 export type Theme = {
-  hslColours: Colours;
-  colours: Colours;
+  hslColors: Colors;
+  colors: Colors;
   background: string;
 };
 
-export type Themes = Record<ThemeMode, Theme>;
+export type Themes = Record<ThemeMode, DefaultTheme>;
