@@ -1,8 +1,19 @@
-import React, { useContext } from 'react';
-import { ThemeModeContext } from '@/contexts/ThemeModeProvider';
+import { Sidebar } from '@/components/Sidebar';
+import styled from 'styled-components';
 
-export default function Home() {
-  const { themeMode, toggleThemeMode } = useContext(ThemeModeContext);
-
-  return <main></main>;
+function Home() {
+  return (
+    <PageWrapper>
+      <Sidebar />
+    </PageWrapper>
+  );
 }
+
+const PageWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 103px 1fr;
+  grid-template-rows: 1fr;
+  height: 100vh;
+`;
+
+export default Home;
