@@ -18,7 +18,8 @@ const Container = styled.div`
   justify-content: flex-end;
   position: relative;
   background-color: var(--color-01);
-  height: 103px;
+  min-height: 103px;
+  max-height: 103px;
   border-bottom-right-radius: 20px;
   overflow: hidden;
 `;

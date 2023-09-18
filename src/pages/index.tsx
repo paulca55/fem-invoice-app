@@ -1,19 +1,20 @@
-import { Sidebar } from '@/components/Sidebar';
 import styled from 'styled-components';
+import { invoiceData } from '@/invoice-data';
 
-function Home() {
+function HomePage() {
   return (
-    <PageWrapper>
-      <Sidebar />
-    </PageWrapper>
+    <Container>
+      <h1>Invoices</h1>
+
+      {invoiceData.map((invoice) => (
+        <p>{invoice.clientName}</p>
+      ))}
+    </Container>
   );
 }
 
-const PageWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 103px 1fr;
-  grid-template-rows: 1fr;
-  height: 100vh;
+const Container = styled.div`
+  margin-top: 100px;
 `;
 
-export default Home;
+export default HomePage;

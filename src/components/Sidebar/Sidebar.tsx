@@ -50,6 +50,7 @@ const ThemeSwitcherWrapper = styled.div`
   justify-content: center;
   justify-items: center;
   padding-bottom: 20px;
+  padding-top: 20px;
 `;
 
 export { Sidebar };
