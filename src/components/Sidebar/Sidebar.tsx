@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { LogoWrapper } from '@/components/LogoWrapper';
 import { Avatar } from '@/components/Avatar';
-import { HalfMoonIcon } from '@/components/svg/icons/HalfMoonIcon';
 import { ThemeSwitcher } from '@/components/ThemeSwitcher';
 
 function Sidebar() {
