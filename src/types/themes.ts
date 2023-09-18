@@ -20,12 +20,17 @@ export type Colors = {
   '10': string;
   '11': string;
   '12': string;
+  '13': string;
+  '14': string;
+  '15': string;
 };
 
 export type Theme = {
   hslColors: Colors;
   colors: Colors;
   background: string;
+  textColor: string;
+  sideBarBgColor: string;
 };
 
 export type Themes = Record<ThemeMode, DefaultTheme>;

@@ -13,6 +13,9 @@ const hslColors: Colors = {
   '10': '0 100% 80%',
   '11': '240 27% 98%',
   '12': '233 30% 11%',
+  '13': '231 20% 27%',
+  '14': '232 20% 36%',
+  '15': '232 23% 61%',
 };
 
 const colors: Colors = {
@@ -28,6 +31,9 @@ const colors: Colors = {
   '10': `hsl(${hslColors['10']})`,
   '11': `hsl(${hslColors['11']})`,
   '12': `hsl(${hslColors['12']})`,
+  '13': `hsl(${hslColors['13']})`,
+  '14': `hsl(${hslColors['14']})`,
+  '15': `hsl(${hslColors['15']})`,
 };
 
 const themes: Themes = {
@@ -35,11 +41,15 @@ const themes: Themes = {
     hslColors,
     colors,
     background: '#fff',
+    textColor: colors['08'],
+    sideBarBgColor: colors['13'],
   },
   dark: {
     hslColors,
     colors,
     background: colors['12'],
+    textColor: '#fff',
+    sideBarBgColor: colors['03'],
   },
 };
 

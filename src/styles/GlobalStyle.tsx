@@ -3,36 +3,41 @@ import { normalize } from 'polished';
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    --01-hsl: ${({ theme }) => theme.hslColors['01']};
-    --02-hsl: ${({ theme }) => theme.hslColors['02']}
-    --03-hsl: ${({ theme }) => theme.hslColors['03']}
-    --04-hsl: ${({ theme }) => theme.hslColors['04']}
-    --05-hsl: ${({ theme }) => theme.hslColors['05']}
-    --06-hsl: ${({ theme }) => theme.hslColors['06']}
-    --07-hsl: ${({ theme }) => theme.hslColors['07']}
-    --08-hsl: ${({ theme }) => theme.hslColors['08']}
-    --09-hsl: ${({ theme }) => theme.hslColors['09']}
-    --10-hsl: ${({ theme }) => theme.hslColors['10']}
-    --11-hsl: ${({ theme }) => theme.hslColors['11']}
-    --12-hsl: ${({ theme }) => theme.hslColors['12']}
-    
-    --01: ${({ theme }) => theme.colors['01']}
-    --02: ${({ theme }) => theme.colors['02']}
-    --03: ${({ theme }) => theme.colors['03']}
-    --04: ${({ theme }) => theme.colors['04']}
-    --05: ${({ theme }) => theme.colors['05']}
-    --06: ${({ theme }) => theme.colors['06']}
-    --07: ${({ theme }) => theme.colors['07']}
-    --08: ${({ theme }) => theme.colors['08']}
-    --09: ${({ theme }) => theme.colors['09']}
-    --10: ${({ theme }) => theme.colors['10']}
-    --11: ${({ theme }) => theme.colors['11']}
-    --12: ${({ theme }) => theme.colors['12']}
+    --color-01-hsl: ${({ theme }) => theme.hslColors['01']};
+    --color-02-hsl: ${({ theme }) => theme.hslColors['02']};
+    --color-03-hsl: ${({ theme }) => theme.hslColors['03']};
+    --color-04-hsl: ${({ theme }) => theme.hslColors['04']};
+    --color-05-hsl: ${({ theme }) => theme.hslColors['05']};
+    --color-06-hsl: ${({ theme }) => theme.hslColors['06']};
+    --color-07-hsl: ${({ theme }) => theme.hslColors['07']};
+    --color-08-hsl: ${({ theme }) => theme.hslColors['08']};
+    --color-09-hsl: ${({ theme }) => theme.hslColors['09']};
+    --color-10-hsl: ${({ theme }) => theme.hslColors['10']};
+    --color-11-hsl: ${({ theme }) => theme.hslColors['11']};
+    --color-12-hsl: ${({ theme }) => theme.hslColors['12']};
+    --color-13-hsl: ${({ theme }) => theme.hslColors['13']};
+    --color-14-hsl: ${({ theme }) => theme.hslColors['14']};
+    --color-15-hsl: ${({ theme }) => theme.hslColors['15']};
+    --color-01: ${({ theme }) => theme.colors['01']};
+    --color-02: ${({ theme }) => theme.colors['02']};
+    --color-03: ${({ theme }) => theme.colors['03']};
+    --color-04: ${({ theme }) => theme.colors['04']};
+    --color-05: ${({ theme }) => theme.colors['05']};
+    --color-06: ${({ theme }) => theme.colors['06']};
+    --color-07: ${({ theme }) => theme.colors['07']};
+    --color-08: ${({ theme }) => theme.colors['08']};
+    --color-09: ${({ theme }) => theme.colors['09']};
+    --color-10: ${({ theme }) => theme.colors['10']};
+    --color-11: ${({ theme }) => theme.colors['11']};
+    --color-12: ${({ theme }) => theme.colors['12']};
+    --color-13: ${({ theme }) => theme.colors['13']};
+    --color-14: ${({ theme }) => theme.colors['14']};
+    --color-15: ${({ theme }) => theme.colors['15']};
   }
 
   /* Normalize */
   ${normalize}
-  
+
   /* Box sizing rules */
   *,
   *::before,
@@ -67,13 +72,14 @@ const GlobalStyle = createGlobalStyle`
 
   /* Set core body defaults */
   body {
-    min-height: 100vh;
+    min-height: 100dvh;
     text-rendering: optimizespeed;
     line-height: 1.4;
     font-weight: 500;
     font-size: 0.8125rem;
-    letter-spacing: -0.00625em;
-    background-color: ${(props) => props.theme.background};
+    letter-spacing: -0.0063em;
+    background-color: ${({ theme }) => theme.background};
+    color: ${({ theme }) => theme.textColor};
   }
 
   /* A elements that don't have a class get default styles */
@@ -85,6 +91,7 @@ const GlobalStyle = createGlobalStyle`
   img,
   picture {
     max-width: 100%;
+    height: auto;
     display: block;
   }
 
@@ -115,6 +122,18 @@ const GlobalStyle = createGlobalStyle`
   /* Create a root stacking context */
   #__next {
     isolation: isolate;
+  }
+
+  /* Buttons */
+  button {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+    text-align: inherit;
+    font: inherit;
+    border-radius: 0;
+    appearance: none;
   }
 `;
 
