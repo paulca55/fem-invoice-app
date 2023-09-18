@@ -5,7 +5,7 @@ import { THEME_MODE, ThemeMode } from '@/types/themes';
 function getInitialColorMode(): ThemeMode {
   if (typeof window !== 'undefined' && window.localStorage) {
     const persistedColorPreference = window.localStorage.getItem(
-      'color-mode',
+      'theme-mode',
     ) as ThemeMode | null;
     const hasPersistedPreference = typeof persistedColorPreference === 'string';
 
@@ -58,7 +58,7 @@ const ThemeModeProvider = ({ children }: ThemeModeProviderProps) => {
     setThemeMode(nextThemeMode);
 
     if (typeof window !== 'undefined' && window.localStorage) {
-      window.localStorage.setItem('color-mode', nextThemeMode);
+      window.localStorage.setItem('theme-mode', nextThemeMode);
     }
   };
 
