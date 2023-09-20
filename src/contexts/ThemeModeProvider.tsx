@@ -1,4 +1,4 @@
-import React, { createContext, ReactNode, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import { THEME_MODE, ThemeMode } from '@/types/themes';
 
 // Check local storage and the preferred color scheme media query
@@ -42,7 +42,7 @@ const ThemeModeContext = createContext<ThemeModeContextValue>({
 
 // Component
 type ThemeModeProviderProps = {
-  children: ReactNode;
+  children: React.ReactNode;
 };
 
 const ThemeModeProvider = ({ children }: ThemeModeProviderProps) => {
