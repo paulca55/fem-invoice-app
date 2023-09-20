@@ -27,6 +27,7 @@ const Container = styled.button<{ $size: number }>`
   align-items: center;
   width: ${(props) => props.$size}px;
   height: ${(props) => props.$size}px;
+  cursor: pointer;
 `;
 
 export { ThemeSwitcher };
