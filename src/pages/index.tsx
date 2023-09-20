@@ -1,19 +1,26 @@
 import styled from 'styled-components';
 import { invoiceData } from '@/invoice-data';
+import { OverviewHeader } from '@/components/OverviewHeader/OverviewHeader';
+import { Card } from '@/components/Card/Card';
 
 function HomePage() {
   return (
-    <Container>
-      <h1>Invoices</h1>
+    <StyledContainer>
+      <OverviewHeader
+        heading="Invoices"
+        subheading={`There are ${invoiceData.length} total invoices`}
+      />
 
       {invoiceData.map((invoice) => (
-        <p>{invoice.clientName}</p>
+        <Card key={invoice.id} style={{ marginTop: 20 }}>
+          <p style={{ padding: 20 }}>{invoice.clientName}</p>
+        </Card>
       ))}
-    </Container>
+    </StyledContainer>
   );
 }
 
-const Container = styled.div`
+const StyledContainer = styled.div`
   margin-top: 100px;
 `;
 
