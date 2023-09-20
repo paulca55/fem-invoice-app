@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { normalize } from 'polished';
+import { em, normalize, rem } from 'polished';
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -76,8 +76,8 @@ const GlobalStyle = createGlobalStyle`
     text-rendering: optimizespeed;
     line-height: 1.4;
     font-weight: 500;
-    font-size: 0.8125rem;
-    letter-spacing: -0.0063em;
+    font-size: ${rem(13)};
+    letter-spacing: ${em(-0.1)};
     background-color: ${({ theme }) => theme.background};
     color: ${({ theme }) => theme.textColor};
   }
