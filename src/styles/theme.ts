@@ -40,7 +40,7 @@ const themes: Themes = {
   light: {
     hslColors,
     colors,
-    background: '#fff',
+    background: '#f2f2f2',
     textColor: colors['08'],
     sideBarBgColor: colors['13'],
   },
