@@ -18,6 +18,8 @@ const GlobalStyle = createGlobalStyle`
     --color-13-hsl: ${({ theme }) => theme.hslColors['13']};
     --color-14-hsl: ${({ theme }) => theme.hslColors['14']};
     --color-15-hsl: ${({ theme }) => theme.hslColors['15']};
+    --color-16-hsl: ${({ theme }) => theme.hslColors['16']};
+    --color-17-hsl: ${({ theme }) => theme.hslColors['17']};
     --color-01: ${({ theme }) => theme.colors['01']};
     --color-02: ${({ theme }) => theme.colors['02']};
     --color-03: ${({ theme }) => theme.colors['03']};
@@ -33,6 +35,8 @@ const GlobalStyle = createGlobalStyle`
     --color-13: ${({ theme }) => theme.colors['13']};
     --color-14: ${({ theme }) => theme.colors['14']};
     --color-15: ${({ theme }) => theme.colors['15']};
+    --color-16: ${({ theme }) => theme.colors['16']};
+    --color-17: ${({ theme }) => theme.colors['17']};
   }
 
   /* Normalize */
@@ -80,6 +84,7 @@ const GlobalStyle = createGlobalStyle`
     letter-spacing: ${em(-0.1)};
     background-color: ${({ theme }) => theme.background};
     color: ${({ theme }) => theme.textColor};
+    transition: background-color 0.3s, color 0.3s;
   }
 
   /* A elements that don't have a class get default styles */
@@ -124,7 +129,7 @@ const GlobalStyle = createGlobalStyle`
     isolation: isolate;
   }
 
-  /* Buttons */
+  /* Button reset */
   button {
     background-color: transparent;
     border: none;

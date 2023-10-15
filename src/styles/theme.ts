@@ -16,6 +16,8 @@ const hslColors: Colors = {
   '13': '231 20% 27%',
   '14': '232 20% 36%',
   '15': '232 23% 61%',
+  '16': '228 71% 99%',
+  '17': '231 20% 27%',
 };
 
 const colors: Colors = {
@@ -34,6 +36,8 @@ const colors: Colors = {
   '13': `hsl(${hslColors['13']})`,
   '14': `hsl(${hslColors['14']})`,
   '15': `hsl(${hslColors['15']})`,
+  '16': `hsl(${hslColors['16']})`,
+  '17': `hsl(${hslColors['17']})`,
 };
 
 const themes: Themes = {

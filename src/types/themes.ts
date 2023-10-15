@@ -23,6 +23,8 @@ export type Colors = {
   '13': string;
   '14': string;
   '15': string;
+  '16': string;
+  '17': string;
 };
 
 export type Theme = {
