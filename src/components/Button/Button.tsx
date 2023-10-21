@@ -53,8 +53,9 @@ const buttonBaseStyles = css`
   display: inline-flex;
   align-items: center;
   height: 48px;
-  border-radius: ${rem(24)};
+  border-radius: 24px;
   font-size: ${rem(15)};
+  font-weight: bold;
   padding: 16px 10px;
   cursor: pointer;
   overflow: hidden;
@@ -107,7 +108,7 @@ const StyledIconContainer = styled.div`
   height: 32px;
   background-color: #fff;
   border-radius: 50%;
-  margin-right: ${rem(4)};
+  margin-right: 4px;
   color: var(--background-color);
 `;
 
