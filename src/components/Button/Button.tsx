@@ -98,12 +98,15 @@ const StyledLabel = styled.label`
   padding-left: 14px;
   padding-right: 14px;
   cursor: pointer;
+  line-height: 1.1;
+  transform: translateY(1px);
 `;
 
 const StyledIconContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
   width: 32px;
   height: 32px;
   background-color: #fff;
