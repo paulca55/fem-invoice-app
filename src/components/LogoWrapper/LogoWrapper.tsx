@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import { Logo } from '@/components/svg/Logo';
+import { breakpoints } from '@/constants';
 
 function LogoWrapper() {
   return (
     <Container>
       <Highlight />
       <LogoContainer>
-        <Logo />
+        <Logo aria-hidden="true" />
       </LogoContainer>
     </Container>
   );
@@ -15,13 +16,19 @@ function LogoWrapper() {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
   justify-content: flex-end;
   position: relative;
   background-color: var(--color-01);
-  min-height: 103px;
-  max-height: 103px;
+  height: var(--sidebar-size);
+  width: var(--sidebar-size);
   border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
   overflow: hidden;
+
+  @media (min-width: ${breakpoints.lg}) {
+    border-bottom-right-radius: 0;
+  }
 `;
 
 const Highlight = styled.div`
@@ -36,6 +43,19 @@ const LogoContainer = styled.div`
   align-items: center;
   position: absolute;
   inset: 0;
+
+  & svg {
+    width: 28px;
+    height: auto;
+
+    @media (min-width: ${breakpoints.sm}) {
+      width: 31px;
+    }
+
+    @media (min-width: ${breakpoints.lg}) {
+      width: 40px;
+    }
+  }
 `;
 
 export { LogoWrapper };

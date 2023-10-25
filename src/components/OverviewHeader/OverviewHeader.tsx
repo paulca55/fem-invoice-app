@@ -1,13 +1,15 @@
 import styled from 'styled-components';
 import { StyledHeadingLg } from '@/components/styled/StyledHeadings';
 import { rem } from 'polished';
+import { Button } from '@/components/Button';
+import { PlusIcon } from '@/components/svg/icons/PlusIcon';
 
-type PageHeaderProps = {
+type OverviewHeaderProps = {
   heading: string;
   subheading: string;
 };
 
-function OverviewHeader({ heading, subheading }: PageHeaderProps) {
+function OverviewHeader({ heading, subheading }: OverviewHeaderProps) {
   return (
     <StyledContainer>
       <div>
@@ -16,7 +18,7 @@ function OverviewHeader({ heading, subheading }: PageHeaderProps) {
       </div>
 
       <StyledActionsWrapper>
-        <button>New invoice</button>
+        <Button icon={PlusIcon}>New invoice</Button>
       </StyledActionsWrapper>
     </StyledContainer>
   );

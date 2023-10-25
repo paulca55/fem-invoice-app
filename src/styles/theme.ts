@@ -44,7 +44,7 @@ const themes: Themes = {
   light: {
     hslColors,
     colors,
-    background: '#f2f2f2',
+    background: colors['11'],
     textColor: colors['08'],
     sideBarBgColor: colors['13'],
   },

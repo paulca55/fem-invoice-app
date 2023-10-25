@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { invoiceData } from '@/invoice-data';
 import { OverviewHeader } from '@/components/OverviewHeader/OverviewHeader';
-import { Card } from '@/components/Card/Card';
+import { invoiceData } from '@/invoice-data';
+import InvoiceList from '@/components/InvoiceList';
 
 function HomePage() {
   return (
@@ -11,11 +11,7 @@ function HomePage() {
         subheading={`There are ${invoiceData.length} total invoices`}
       />
 
-      {invoiceData.map((invoice) => (
-        <Card key={invoice.id} style={{ marginTop: 20 }}>
-          <p style={{ padding: 20 }}>{invoice.clientName}</p>
-        </Card>
-      ))}
+      <InvoiceList invoices={invoiceData} />
     </StyledContainer>
   );
 }

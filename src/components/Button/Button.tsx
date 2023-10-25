@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 import styled, { css } from 'styled-components';
 import { rem } from 'polished';
 import { Icon } from '@/types/Icon';
@@ -24,14 +24,20 @@ type ButtonProps = {
   icon?: Icon;
   iconSize?: number;
   children: React.ReactNode;
-};
+} & ButtonHTMLAttributes<HTMLButtonElement>;
 
 // Component
-function Button({ variant = 'variant1', as = 'button', icon: Icon, children }: ButtonProps) {
+function Button({
+  variant = 'variant1',
+  as = 'button',
+  icon: Icon,
+  children,
+  ...props
+}: ButtonProps) {
   const ButtonComponent = getButtonType(variant);
 
   return (
-    <ButtonComponent as={as}>
+    <ButtonComponent as={as} {...props}>
       {Icon && (
         <StyledIconContainer aria-hidden={'true'}>
           <Icon size={10} />

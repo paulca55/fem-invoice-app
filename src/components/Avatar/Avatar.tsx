@@ -1,33 +1,27 @@
 import styled from 'styled-components';
-import Image from 'next/image';
+import { breakpoints } from '@/constants';
 
 type AvatarProps = {
-  size?: number;
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
+  imageSource: string;
 };
 
-function Avatar({ size = 40, src, alt, width, height }: AvatarProps) {
-  return (
-    <Container $size={size}>
-      <StyledImage src={src} alt={alt} width={width} height={height} />
-    </Container>
-  );
+function Avatar({ imageSource }: AvatarProps) {
+  return <Container $imageSource={imageSource} />;
 }
 
-const Container = styled.div<{ $size: number }>`
-  width: ${(props) => props.$size}px;
-  height: ${(props) => props.$size}px;
-  background-color: #fff;
+const Container = styled.div<{ $imageSource: string }>`
+  height: 32px;
+  width: 32px;
+  background-image: url(${(props) => props.$imageSource});
+  background-size: cover;
+  background-color: #f4f4f4;
   border-radius: 50%;
   overflow: hidden;
-`;
 
-const StyledImage = styled(Image)`
-  object-fit: cover;
-  width: 100%;
+  @media (min-width: ${breakpoints.sm}) {
+    height: 40px;
+    width: 40px;
+  }
 `;
 
 export { Avatar };
