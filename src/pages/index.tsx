@@ -1,23 +1,34 @@
 import styled from 'styled-components';
 import { OverviewHeader } from '@/components/OverviewHeader/OverviewHeader';
-import { invoiceData } from '@/invoice-data';
 import InvoiceList from '@/components/InvoiceList';
+import { useLiveQuery } from 'dexie-react-hooks';
+import { db } from '@/db';
 
 function HomePage() {
+  const invoices = useLiveQuery(() => db.invoices.toArray());
+
   return (
     <StyledContainer>
       <OverviewHeader
         heading="Invoices"
-        subheading={`There are ${invoiceData.length} total invoices`}
+        subheading={
+          invoices?.length ? `There are ${invoices?.length} total invoices` : 'Loading invoices...'
+        }
       />
 
-      <InvoiceList invoices={invoiceData} />
+      <StyledInvoiceWrapper>
+        <InvoiceList invoices={invoices} />
+      </StyledInvoiceWrapper>
     </StyledContainer>
   );
 }
 
 const StyledContainer = styled.div`
   margin-top: 100px;
+`;
+
+const StyledInvoiceWrapper = styled.div`
+  margin-top: 64px;
 `;
 
 export default HomePage;

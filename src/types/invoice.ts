@@ -1,18 +1,20 @@
 export type Invoice = {
+  id: number;
+  invoiceId: string;
   createdAt: string;
   paymentDue: string;
   description: string;
   paymentTerms: number;
   clientName: string;
   clientEmail: string;
-  status: Status;
+  status: InvoiceStatus;
   senderAddress: SenderAddress;
   clientAddress: ClientAddress;
   items: Item[];
   total: number;
 };
 
-type Status = 'paid' | 'pending' | 'draft';
+export type InvoiceStatus = 'paid' | 'pending' | 'draft';
 
 type SenderAddress = {
   street: string;

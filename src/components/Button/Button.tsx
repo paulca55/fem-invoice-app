@@ -1,7 +1,7 @@
 import React, { ButtonHTMLAttributes } from 'react';
 import styled, { css } from 'styled-components';
 import { rem } from 'polished';
-import { Icon } from '@/types/Icon';
+import { Icon } from '@/types/icon';
 
 type ButtonType = 'variant1' | 'variant2' | 'variant3' | 'variant4';
 

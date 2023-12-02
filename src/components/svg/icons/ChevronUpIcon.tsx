@@ -1,4 +1,4 @@
-import { IconProps } from '@/types/Icon';
+import { IconProps } from '@/types/icon';
 
 function ChevronUpIcon({ size = 10, color, ...props }: IconProps) {
   return (

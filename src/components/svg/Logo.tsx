@@ -1,4 +1,4 @@
-import { IconProps } from '@/types/Icon';
+import { IconProps } from '@/types/icon';
 
 function Logo({ size = 40, color, ...props }: IconProps) {
   return (

@@ -1,4 +1,4 @@
-import { IconProps } from '@/types/Icon';
+import { IconProps } from '@/types/icon';
 
 function SunIcon({ size = 20, color, ...props }: IconProps) {
   return (

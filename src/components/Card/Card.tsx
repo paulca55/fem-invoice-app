@@ -1,19 +1,37 @@
-import styled from 'styled-components';
-import React from 'react';
+import styled, { css } from 'styled-components';
+import React, { ButtonHTMLAttributes, HTMLAttributes } from 'react';
 
 type CardProps = {
+  as?: React.ElementType;
   children: React.ReactNode;
-  style?: React.CSSProperties;
+  hasHover?: boolean;
 };
 
-function Card({ children, style }: CardProps) {
-  return <StyledContainer style={style}>{children}</StyledContainer>;
+function Card({ as, children, hasHover = false, ...props }: CardProps) {
+  return (
+    <StyledContainer $hasHover={hasHover} {...props}>
+      {children}
+    </StyledContainer>
+  );
 }
 
-const StyledContainer = styled.article`
+const StyledContainer = styled.div<{ $hasHover?: boolean }>`
   background-color: #fff;
   border-radius: 8px;
-  box-shadow: hsl(231deg 38% 45% / 10%) 0 10px 10px -10px;
+  box-shadow: var(--shadow);
+  border: 1px solid #fff;
+  transition: border-color 0.2s;
+
+  ${(props) => {
+    if (props.$hasHover) {
+      return css`
+        &:hover {
+          border-color: var(--color-01);
+          cursor: pointer;
+        }
+      `;
+    }
+  }}
 `;
 
 export { Card };

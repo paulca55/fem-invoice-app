@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { rem } from 'polished';
+import { StyledHideVisually } from '@/components/styled/StyledVisuallyHidden';
 
 export type StatusType = 'success' | 'warning' | 'neutral';
 
@@ -23,7 +24,12 @@ type StatusProps = {
 function Status({ variant = 'neutral', text }: StatusProps) {
   const StatusComponent = getStatusType(variant);
 
-  return <StatusComponent>{text}</StatusComponent>;
+  return (
+    <StatusComponent>
+      <StyledHideVisually>Status is </StyledHideVisually>
+      {text}
+    </StatusComponent>
+  );
 }
 
 // Styled components
@@ -35,9 +41,11 @@ const statusBaseStyles = css`
   color: var(--color);
   display: flex;
   align-items: center;
+  justify-content: center;
   border-radius: 6px;
   font-size: ${rem(15)};
-  padding: 10px 20px;
+  min-height: 40px;
+  line-height: 1;
 
   &::before {
     content: '';

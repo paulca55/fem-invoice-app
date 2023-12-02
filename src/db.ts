@@ -1,6 +1,6 @@
 // db.ts
 import Dexie, { Table } from 'dexie';
-import { Invoice } from '@/types/Invoices';
+import { Invoice } from '@/types/invoice';
 
 export class MySubClassedDexie extends Dexie {
   // 'invoices' is added by dexie when declaring the stores()
@@ -10,8 +10,9 @@ export class MySubClassedDexie extends Dexie {
   constructor() {
     super('InvoiceApp');
     this.version(1).stores({
+      // Primary key and indexed props
       invoices:
-        '++id, createdAt, paymentDue, description, paymentTerms, clientName, clientEmail, status, senderAddress, clientAddress, items, total', // Primary key and indexed props
+        '++id, invoiceId, createdAt, paymentDue, description, paymentTerms, clientName, clientEmail, status, senderAddress, clientAddress, items, total',
     });
   }
 }
