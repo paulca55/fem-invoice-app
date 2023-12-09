@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Status, StatusType } from '@/components/Status';
-import { Card } from '@/components/Card/Card';
+import { Card } from '@/components/Card';
 import voca from 'voca';
 import styled from 'styled-components';
 import { Invoice, InvoiceStatus } from '@/types/invoice';
@@ -10,6 +10,8 @@ import { formattedCurrency } from '@/utilities';
 import { StyledHideVisually } from '@/components/styled/StyledVisuallyHidden';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { ThemeMode } from '@/types/themes';
+import { useThemeMode } from '@/contexts/ThemeModeProvider';
 
 // Constants
 const urlPath = '/invoice/';
@@ -36,6 +38,7 @@ type InvoiceListItemProps = {
 function InvoiceListItem({ invoice }: InvoiceListItemProps) {
   const listItemRef = useRef<HTMLDivElement | null>(null);
   const router = useRouter();
+  const { themeMode } = useThemeMode();
 
   function handleClick(id: number) {
     void router.push(urlPath + id);
@@ -43,16 +46,16 @@ function InvoiceListItem({ invoice }: InvoiceListItemProps) {
 
   return (
     <Card key={invoice.id} hasHover={true}>
-      <ItemWrapper onClick={() => handleClick(invoice.id)}>
+      <ItemWrapper onClick={() => handleClick(invoice.id as number)}>
         <ItemContent ref={listItemRef}>
           <InvoiceId>
             <span aria-hidden={true}>#</span> <StyledHideVisually>Invoice</StyledHideVisually>
             {invoice.invoiceId}
           </InvoiceId>
-          <PaymentDueDate>
+          <PaymentDueDate $mode={themeMode}>
             <span>Due</span> <time dateTime="2019-09-11">{invoice.paymentDue}</time>
           </PaymentDueDate>
-          <ClientName>{invoice.clientName}</ClientName>
+          <ClientName $mode={themeMode}>{invoice.clientName}</ClientName>
           <InvoiceTotal>{formattedCurrency(invoice.total)}</InvoiceTotal>
           <Status text={voca.titleCase(invoice.status)} variant={getStatusType(invoice.status)} />
         </ItemContent>
@@ -98,19 +101,20 @@ const InvoiceId = styled.div`
   }
 `;
 
-const PaymentDueDate = styled.div`
-  color: var(--color-07);
+const PaymentDueDate = styled.div<{ $mode: ThemeMode }>`
+  color: ${(props) => (props.$mode === 'light' ? 'var(--color-07)' : '#fff')};
 
   & span {
-    color: var(--color-06);
+    color: ${(props) => (props.$mode === 'light' ? 'var(--color-06)' : '#fff')};
   }
 `;
 
-const ClientName = styled.div`
-  color: var(--color-06);
+const ClientName = styled.div<{ $mode: ThemeMode }>`
+  color: ${(props) => (props.$mode === 'light' ? 'var(--color-06)' : '#fff')};
 `;
 
 const InvoiceTotal = styled.div`
+  will-change: auto;
   font-size: ${rem(15)};
   font-weight: 700;
   text-align: right;
@@ -125,6 +129,7 @@ const ViewLink = styled(Link)`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  color: var(--color-01);
 `;
 
-export default InvoiceListItem;
+export { InvoiceListItem };

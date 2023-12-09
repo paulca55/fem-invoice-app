@@ -3,7 +3,6 @@ import { em, normalize, rem } from 'polished';
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    --sidebar-size: 72px;
     --shadow: hsl(231deg 38% 45% / 10%) 0 10px 10px -10px;
     --color-01-hsl: ${({ theme }) => theme.hslColors['01']};
     --color-02-hsl: ${({ theme }) => theme.hslColors['02']};

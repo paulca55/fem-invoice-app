@@ -251,9 +251,11 @@ export default function App({ Component, pageProps }: AppProps) {
       <ThemeWrapper>
         <PageWrapper className={leagueSpartan.className}>
           <Sidebar />
-          <PageContent>
-            <Component {...pageProps} />
-          </PageContent>
+          <PageContentWrapper>
+            <PageContent>
+              <Component {...pageProps} />
+            </PageContent>
+          </PageContentWrapper>
         </PageWrapper>
         <GlobalStyle />
       </ThemeWrapper>
@@ -262,7 +264,7 @@ export default function App({ Component, pageProps }: AppProps) {
 }
 
 const PageWrapper = styled.div`
-  height: 100dvh;
+  --sidebar-size: 72px;
 
   @media (min-width: ${breakpoints.sm}) {
     --sidebar-size: 80px;
@@ -270,17 +272,21 @@ const PageWrapper = styled.div`
 
   @media (min-width: ${breakpoints.lg}) {
     --sidebar-size: 103px;
+  }
+`;
 
-    display: grid;
-    grid-template-columns: var(--sidebar-size) 1fr;
-    grid-template-rows: 1fr;
+const PageContentWrapper = styled.main`
+  display: flex;
+  justify-content: center;
+  padding-left: 40px;
+  padding-right: 40px;
+
+  @media (min-width: ${breakpoints.lg}) {
+    margin-left: var(--sidebar-size);
   }
 `;
 
 const PageContent = styled.main`
   width: 100%;
-  max-width: ${rem(810)};
-  padding-left: 40px;
-  padding-right: 40px;
-  margin: 0 auto;
+  max-width: ${rem(730)};
 `;

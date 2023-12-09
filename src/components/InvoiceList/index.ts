@@ -1,2 +1,2 @@
-export * from './InvoiceList';
-export { default } from './InvoiceList';
+export { InvoiceList } from './InvoiceList';
+export { InvoiceListItem } from './InvoiceListItem';

@@ -23,14 +23,20 @@ function Sidebar() {
 const Container = styled.div`
   display: flex;
   flex-direction: row;
+  position: sticky;
+  z-index: 10;
+  top: 0;
   background-color: ${({ theme }) => theme.sideBarBgColor};
   border-bottom-right-radius: 0;
   overflow: hidden;
 
   @media (min-width: ${breakpoints.lg}) {
+    flex-direction: column;
+    position: fixed;
+    width: 103px;
+    bottom: 0;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    flex-direction: column;
   }
 `;
 

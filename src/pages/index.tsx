@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { OverviewHeader } from '@/components/OverviewHeader/OverviewHeader';
-import InvoiceList from '@/components/InvoiceList';
+import { OverviewHeader } from '@/components/OverviewHeader';
+import { InvoiceList } from '@/components/InvoiceList';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '@/db';
 

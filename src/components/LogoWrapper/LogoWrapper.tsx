@@ -1,19 +1,50 @@
 import styled from 'styled-components';
 import { Logo } from '@/components/svg/Logo';
 import { breakpoints } from '@/constants';
+import Link from 'next/link';
 
 function LogoWrapper() {
   return (
-    <Container>
+    <StyledLink href="/">
       <Highlight />
       <LogoContainer>
-        <Logo aria-hidden="true" />
+        <StyledLogo aria-hidden="true" />
       </LogoContainer>
-    </Container>
+    </StyledLink>
   );
 }
 
-const Container = styled.div`
+const Highlight = styled.div`
+  height: 100%;
+  transform: translateY(50%);
+  background-color: var(--color-02);
+  border-top-left-radius: 20px;
+  transition: transform 0.2s;
+`;
+
+const LogoContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  inset: 0;
+`;
+
+const StyledLogo = styled(Logo)`
+  width: 28px;
+  height: auto;
+  transition: transform 0.2s;
+
+  @media (min-width: ${breakpoints.sm}) {
+    width: 31px;
+  }
+
+  @media (min-width: ${breakpoints.lg}) {
+    width: 40px;
+  }
+`;
+
+const StyledLink = styled(Link)`
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
@@ -26,35 +57,16 @@ const Container = styled.div`
   border-top-right-radius: 20px;
   overflow: hidden;
 
+  &:hover ${Highlight} {
+    transform: translateY(100%);
+  }
+
+  &:hover ${StyledLogo} {
+    transform: scale(0.9);
+  }
+
   @media (min-width: ${breakpoints.lg}) {
     border-bottom-right-radius: 0;
-  }
-`;
-
-const Highlight = styled.div`
-  height: 50%;
-  background-color: var(--color-02);
-  border-top-left-radius: 20px;
-`;
-
-const LogoContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  inset: 0;
-
-  & svg {
-    width: 28px;
-    height: auto;
-
-    @media (min-width: ${breakpoints.sm}) {
-      width: 31px;
-    }
-
-    @media (min-width: ${breakpoints.lg}) {
-      width: 40px;
-    }
   }
 `;
 

@@ -3,7 +3,7 @@ import { StyledHeadingLg } from '@/components/styled/StyledHeadings';
 import { rem } from 'polished';
 import { Button } from '@/components/Button';
 import { PlusIcon } from '@/components/svg/icons/PlusIcon';
-import { db } from '@/db';
+import { addInvoice } from '@/db';
 import { generateRandomInvoiceId } from '@/utilities';
 
 type OverviewHeaderProps = {
@@ -12,7 +12,7 @@ type OverviewHeaderProps = {
 };
 
 async function handleAddInvoice() {
-  const id = await db.invoices.add({
+  await addInvoice({
     invoiceId: generateRandomInvoiceId(),
     createdAt: '05-11-2021',
     paymentDue: '12-11-2021',
@@ -65,6 +65,7 @@ function OverviewHeader({ heading, subheading }: OverviewHeaderProps) {
 const StyledContainer = styled.section`
   display: flex;
   align-items: center;
+  gap: 30px;
 `;
 
 const StyledSubheading = styled.p`

@@ -1,1 +1,2 @@
-export * from './Status';
+export { Status } from './Status';
+export type { StatusType } from './Status';

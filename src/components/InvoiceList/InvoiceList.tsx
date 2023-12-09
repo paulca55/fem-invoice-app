@@ -1,5 +1,5 @@
 import * as React from 'react';
-import InvoiceListItem from './InvoiceListItem';
+import { InvoiceListItem } from './InvoiceListItem';
 import styled from 'styled-components';
 import { Invoice } from '@/types/invoice';
 
@@ -28,4 +28,4 @@ const Container = styled.ul`
   padding: 0;
 `;
 
-export default InvoiceList;
+export { InvoiceList };

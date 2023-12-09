@@ -1,5 +1,5 @@
 export type Invoice = {
-  id: number;
+  id?: number;
   invoiceId: string;
   createdAt: string;
   paymentDue: string;
