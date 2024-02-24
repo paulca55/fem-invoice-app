@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Logo } from '@/components/svg/Logo';
+import { Logo } from '@/components/_svg/Logo';
 import { breakpoints } from '@/constants';
 import Link from 'next/link';
 
@@ -34,6 +34,7 @@ const StyledLogo = styled(Logo)`
   width: 28px;
   height: auto;
   transition: transform 0.2s;
+  color: #fff;
 
   @media (min-width: ${breakpoints.sm}) {
     width: 31px;

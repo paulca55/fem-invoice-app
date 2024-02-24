@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
-import { Status, StatusType } from '@/components/Status';
+import { Status } from '@/components/Status';
 import { Card } from '@/components/Card';
 import voca from 'voca';
 import styled from 'styled-components';
-import { Invoice, InvoiceStatus } from '@/types/invoice';
-import { ChevronRightIcon } from '@/components/svg/icons/ChevronRightIcon';
+import { Invoice } from '@/types/invoice';
+import { ChevronRightIcon } from '@/components/_svg/icons/ChevronRightIcon';
 import { rem } from 'polished';
 import { formattedCurrency } from '@/utilities';
 import { StyledHideVisually } from '@/components/styled/StyledVisuallyHidden';
@@ -12,23 +12,10 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ThemeMode } from '@/types/themes';
 import { useThemeMode } from '@/contexts/ThemeModeProvider';
+import { getStatusType } from '@/helpers/invoice.helpers';
 
 // Constants
 const urlPath = '/invoice/';
-
-// Helpers
-function getStatusType(status: InvoiceStatus): StatusType {
-  switch (status) {
-    case 'draft':
-      return 'neutral';
-    case 'pending':
-      return 'warning';
-    case 'paid':
-      return 'success';
-    default:
-      return 'neutral';
-  }
-}
 
 // Component
 type InvoiceListItemProps = {
@@ -64,7 +51,7 @@ function InvoiceListItem({ invoice }: InvoiceListItemProps) {
           href={urlPath + invoice.id}
           aria-label={`View full details for invoice ${invoice.invoiceId}.`}
         >
-          <ChevronRightIcon style={{ justifySelf: 'end' }} aria-hidden={true} />
+          <ChevronIcon aria-hidden={true} />
         </ViewLink>
       </ItemWrapper>
     </Card>
@@ -75,8 +62,8 @@ function InvoiceListItem({ invoice }: InvoiceListItemProps) {
 const ItemWrapper = styled.div`
   display: flex;
   align-items: center;
-  padding-top: 11px;
-  padding-bottom: 11px;
+  padding-block-start: 11px;
+  padding-block-end: 11px;
   padding-inline-start: 30px;
   padding-inline-end: 0;
 `;
@@ -92,6 +79,7 @@ const ItemContent = styled.div`
   grid-gap: 10px;
   align-items: center;
   overflow-x: auto;
+  overscroll-behavior-x: contain;
 `;
 
 const InvoiceId = styled.div`
@@ -130,7 +118,13 @@ const ViewLink = styled(Link)`
   height: 48px;
   align-items: center;
   justify-content: center;
+  margin-inline-start: auto;
   cursor: pointer;
+`;
+
+const ChevronIcon = styled(ChevronRightIcon)`
+  width: 6px;
+  flex-shrink: 0;
   color: var(--color-01);
 `;
 

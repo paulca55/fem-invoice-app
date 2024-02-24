@@ -35,13 +35,18 @@ function Button({
   ...props
 }: ButtonProps) {
   const ButtonComponent = getButtonType(variant);
+  const StyledIcon = Icon
+    ? styled(Icon)`
+        width: 10px;
+      `
+    : null;
 
   return (
     <ButtonComponent type="button" as={as} {...props}>
-      {Icon && (
-        <StyledIconContainer aria-hidden={'true'}>
-          <Icon size={10} />
-        </StyledIconContainer>
+      {StyledIcon && (
+        <StyledIconWrapper aria-hidden={'true'}>
+          <StyledIcon />
+        </StyledIconWrapper>
       )}
       <StyledLabel>{children}</StyledLabel>
     </ButtonComponent>
@@ -58,6 +63,7 @@ const buttonBaseStyles = css`
   color: var(--color);
   display: inline-flex;
   align-items: center;
+  flex-shrink: 0;
   height: 48px;
   border-radius: 24px;
   font-size: ${rem(15)};
@@ -102,24 +108,25 @@ const StyledButton4 = styled.button`
 `;
 
 const StyledLabel = styled.label`
-  padding-inline-start: 14px;
-  padding-inline-end: 14px;
+  padding-inline: 10px;
   cursor: pointer;
   line-height: 1.1;
   transform: translateY(1px);
+  text-align: center;
+  flex: 1;
 `;
 
-const StyledIconContainer = styled.div`
+const StyledIconWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
   width: 32px;
   height: 32px;
-  background-color: #fff;
+  background-color: var(--color);
+  color: var(--background-color);
   border-radius: 50%;
   margin-inline-end: 4px;
-  color: var(--background-color);
 `;
 
 export { Button };
