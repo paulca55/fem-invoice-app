@@ -1,7 +1,6 @@
-import * as React from 'react';
-import { InvoiceListItem } from './InvoiceListItem';
 import styled from 'styled-components';
 import { Invoice } from '@/types/invoice';
+import { InvoiceListItem } from './InvoiceListItem';
 
 type InvoiceListProps = {
   invoices: Array<Invoice> | undefined;

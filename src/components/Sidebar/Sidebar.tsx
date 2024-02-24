@@ -42,12 +42,12 @@ const Container = styled.div`
 
 const Footer = styled.div`
   display: flex;
-  margin-left: auto;
+  margin-inline-start: auto;
 
   @media (min-width: ${breakpoints.lg}) {
     flex-direction: column;
-    margin-left: 0;
-    margin-top: auto;
+    margin-inline-start: 0;
+    margin-block-start: auto;
   }
 `;
 

@@ -75,7 +75,10 @@ function InvoiceListItem({ invoice }: InvoiceListItemProps) {
 const ItemWrapper = styled.div`
   display: flex;
   align-items: center;
-  padding: 11px 0 11px 30px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  padding-inline-start: 30px;
+  padding-inline-end: 0;
 `;
 
 const ItemContent = styled.div`
@@ -114,7 +117,6 @@ const ClientName = styled.div<{ $mode: ThemeMode }>`
 `;
 
 const InvoiceTotal = styled.div`
-  will-change: auto;
   font-size: ${rem(15)};
   font-weight: 700;
   text-align: right;

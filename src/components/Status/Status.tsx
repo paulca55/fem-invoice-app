@@ -52,7 +52,7 @@ const statusBaseStyles = css`
     width: 8px;
     height: 8px;
     background-color: var(--color);
-    margin-right: 8px;
+    margin-inline-end: 8px;
     border-radius: 50%;
   }
 `;

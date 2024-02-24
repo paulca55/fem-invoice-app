@@ -275,14 +275,14 @@ const PageWrapper = styled.div`
   }
 `;
 
-const PageContentWrapper = styled.main`
+const PageContentWrapper = styled.div`
   display: flex;
   justify-content: center;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-inline-start: 40px;
+  padding-inline-end: 40px;
 
   @media (min-width: ${breakpoints.lg}) {
-    margin-left: var(--sidebar-size);
+    margin-inline-start: var(--sidebar-size);
   }
 `;
 

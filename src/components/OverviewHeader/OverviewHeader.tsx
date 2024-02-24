@@ -70,11 +70,11 @@ const StyledContainer = styled.section`
 
 const StyledSubheading = styled.p`
   color: var(--color-06);
-  margin-top: ${rem(4)};
+  padding-block-start: ${rem(4)};
 `;
 
 const StyledActionsWrapper = styled.div`
-  margin-left: auto;
+  margin-inline-start: auto;
 `;
 
 export { OverviewHeader };

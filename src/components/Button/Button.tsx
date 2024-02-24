@@ -37,7 +37,7 @@ function Button({
   const ButtonComponent = getButtonType(variant);
 
   return (
-    <ButtonComponent as={as} {...props}>
+    <ButtonComponent type="button" as={as} {...props}>
       {Icon && (
         <StyledIconContainer aria-hidden={'true'}>
           <Icon size={10} />
@@ -62,7 +62,8 @@ const buttonBaseStyles = css`
   border-radius: 24px;
   font-size: ${rem(15)};
   font-weight: bold;
-  padding: 16px 10px;
+  padding-block: 16px;
+  padding-inline: 10px;
   cursor: pointer;
   overflow: hidden;
   transition:
@@ -101,8 +102,8 @@ const StyledButton4 = styled.button`
 `;
 
 const StyledLabel = styled.label`
-  padding-left: 14px;
-  padding-right: 14px;
+  padding-inline-start: 14px;
+  padding-inline-end: 14px;
   cursor: pointer;
   line-height: 1.1;
   transform: translateY(1px);
@@ -117,7 +118,7 @@ const StyledIconContainer = styled.div`
   height: 32px;
   background-color: #fff;
   border-radius: 50%;
-  margin-right: 4px;
+  margin-inline-end: 4px;
   color: var(--background-color);
 `;
 
