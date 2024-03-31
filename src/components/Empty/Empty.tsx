@@ -48,4 +48,4 @@ const StyledTextSml = styled.p`
   max-width: 26ch;
 `;
 
-export default Empty;
+export { Empty };

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { StyledHeadingLg } from '@/components/styled/StyledHeadings';
 import { rem } from 'polished';
 import { Button } from '@/components/Button';
-import { PlusIcon } from '@/components/svg/icons/PlusIcon';
+import { PlusIcon } from '@/components/_svg/icons/PlusIcon';
 import { addInvoice } from '@/db';
 import { generateRandomInvoiceId } from '@/utilities';
 

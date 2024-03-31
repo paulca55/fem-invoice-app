@@ -3,7 +3,7 @@ import { OverviewHeader } from '@/components/OverviewHeader';
 import { InvoiceList } from '@/components/InvoiceList';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '@/db';
-import Empty from '@/components/Empty/Empty';
+import { Empty } from '@/components/Empty/Empty';
 
 function HomePage() {
   const invoices = useLiveQuery(() => db.invoices.toArray());

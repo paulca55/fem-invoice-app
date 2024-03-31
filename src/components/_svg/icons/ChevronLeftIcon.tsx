@@ -1,15 +1,8 @@
 import { IconProps } from '@/types/icon';
 
-function ChevronLeftIcon({ size = 10, color, ...props }: IconProps) {
+function ChevronLeftIcon(props: IconProps) {
   return (
-    <svg
-      width={size * 0.6}
-      height={size}
-      fill={color || 'currentColor'}
-      viewBox="0 0 6 10"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
+    <svg fill="currentColor" viewBox="0 0 6 10" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path
         fillRule="evenodd"
         clipRule="evenodd"

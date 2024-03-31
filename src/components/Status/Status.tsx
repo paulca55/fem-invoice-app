@@ -44,8 +44,9 @@ const statusBaseStyles = css`
   justify-content: center;
   border-radius: 6px;
   font-size: ${rem(15)};
-  min-height: 40px;
   line-height: 1;
+  padding-inline: 1.3em;
+  padding-block: 0.8em;
 
   &::before {
     content: '';

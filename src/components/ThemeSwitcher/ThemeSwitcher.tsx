@@ -1,8 +1,9 @@
 import styled from 'styled-components';
-import { HalfMoonIcon } from '@/components/svg/icons/HalfMoonIcon';
+import { HalfMoonIcon } from '@/components/_svg/icons/HalfMoonIcon';
 import { useThemeMode } from '@/contexts/ThemeModeProvider';
-import { SunIcon } from '@/components/svg/icons/SunIcon';
+import { SunIcon } from '@/components/_svg/icons/SunIcon';
 import { ThemeMode } from '@/types/themes';
+import { StyledHideVisually } from '@/components/styled/StyledVisuallyHidden';
 
 type AvatarProps = {
   size?: number;
@@ -10,15 +11,24 @@ type AvatarProps = {
 
 function ThemeSwitcher({ size = 48 }: AvatarProps) {
   const { themeMode, toggleThemeMode } = useThemeMode();
+  const isLightMode = themeMode === 'light';
 
   return (
-    <Container onClick={toggleThemeMode} $size={size} $mode={themeMode}>
-      {themeMode === 'light' ? <HalfMoonIcon /> : <SunIcon />}
-    </Container>
+    <StyledButton
+      onClick={toggleThemeMode}
+      $size={size}
+      $mode={themeMode}
+      // aria-label={`Switch to ${isLightMode ? 'dark mode' : 'light mode'}.`}
+    >
+      <StyledHideVisually>
+        {`Switch to ${isLightMode ? 'dark mode' : 'light mode'}.`}
+      </StyledHideVisually>
+      <IconWrapper aria-hidden={true}>{isLightMode ? <HalfMoonIcon /> : <SunIcon />}</IconWrapper>
+    </StyledButton>
   );
 }
 
-const Container = styled.button<{ $size: number; $mode: ThemeMode }>`
+const StyledButton = styled.button<{ $size: number; $mode: ThemeMode }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,6 +42,11 @@ const Container = styled.button<{ $size: number; $mode: ThemeMode }>`
   &:focus-visible {
     color: var(--color-05);
   }
+`;
+
+const IconWrapper = styled.div`
+  width: 20px;
+  height: 20px;
 `;
 
 export { ThemeSwitcher };
