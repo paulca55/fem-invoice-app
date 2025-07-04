@@ -1,6 +1,6 @@
-import { Colors, Themes } from '@/types/themes';
+import { Themes } from '@/types/themes';
 
-const hslColors: Colors = {
+const hslColors = {
   '01': '252 94% 67%',
   '02': '252 100% 73%',
   '03': '233 31% 17%',
@@ -18,9 +18,9 @@ const hslColors: Colors = {
   '15': '232 23% 61%',
   '16': '228 71% 99%',
   '17': '231 20% 27%',
-};
+} as const;
 
-const colors: Colors = {
+const colors = {
   '01': `hsl(${hslColors['01']})`,
   '02': `hsl(${hslColors['02']})`,
   '03': `hsl(${hslColors['03']})`,
@@ -38,7 +38,7 @@ const colors: Colors = {
   '15': `hsl(${hslColors['15']})`,
   '16': `hsl(${hslColors['16']})`,
   '17': `hsl(${hslColors['17']})`,
-};
+} as const;
 
 const themes: Themes = {
   light: {
@@ -57,4 +57,4 @@ const themes: Themes = {
   },
 };
 
-export { themes };
+export { themes, colors, hslColors };

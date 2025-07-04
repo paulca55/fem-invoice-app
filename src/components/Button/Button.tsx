@@ -35,17 +35,12 @@ function Button({
   ...props
 }: ButtonProps) {
   const ButtonComponent = getButtonType(variant);
-  const StyledIcon = Icon
-    ? styled(Icon)`
-        width: 10px;
-      `
-    : null;
 
   return (
     <ButtonComponent type="button" as={as} {...props}>
-      {StyledIcon && (
+      {Icon && (
         <StyledIconWrapper aria-hidden={'true'}>
-          <StyledIcon />
+          <Icon />
         </StyledIconWrapper>
       )}
       <StyledLabel>{children}</StyledLabel>
@@ -108,7 +103,7 @@ const StyledButton4 = styled.button`
 `;
 
 const StyledLabel = styled.label`
-  padding-inline: 10px;
+  padding-inline: 14px;
   cursor: pointer;
   line-height: 1.1;
   transform: translateY(1px);
@@ -126,7 +121,10 @@ const StyledIconWrapper = styled.div`
   background-color: var(--color);
   color: var(--background-color);
   border-radius: 50%;
-  margin-inline-end: 4px;
+
+  & svg {
+    width: 10px;
+  }
 `;
 
 export { Button };

@@ -7,12 +7,12 @@ import { Invoice } from '@/types/invoice';
 import { ChevronRightIcon } from '@/components/_svg/icons/ChevronRightIcon';
 import { rem } from 'polished';
 import { formattedCurrency } from '@/utilities';
-import { StyledHideVisually } from '@/components/styled/StyledVisuallyHidden';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ThemeMode } from '@/types/themes';
 import { useThemeMode } from '@/contexts/ThemeModeProvider';
 import { getStatusType } from '@/helpers/invoice.helpers';
+import { InvoiceId } from '@/components/InvoiceId';
 
 // Constants
 const urlPath = '/invoice/';
@@ -35,10 +35,7 @@ function InvoiceListItem({ invoice }: InvoiceListItemProps) {
     <Card key={invoice.id} hasHover={true}>
       <ItemWrapper onClick={() => handleClick(invoice.id as number)}>
         <ItemContent ref={listItemRef}>
-          <InvoiceId>
-            <span aria-hidden={true}>#</span> <StyledHideVisually>Invoice</StyledHideVisually>
-            {invoice.invoiceId}
-          </InvoiceId>
+          <InvoiceId id={invoice.invoiceId} />
           <PaymentDueDate $mode={themeMode}>
             <span>Due</span> <time dateTime="2019-09-11">{invoice.paymentDue}</time>
           </PaymentDueDate>
@@ -80,16 +77,6 @@ const ItemContent = styled.div`
   align-items: center;
   overflow-x: auto;
   overscroll-behavior-x: contain;
-`;
-
-const InvoiceId = styled.div`
-  font-size: ${rem(15)};
-  font-weight: 700;
-  display: flex;
-
-  & span {
-    color: var(--color-07);
-  }
 `;
 
 const PaymentDueDate = styled.div<{ $mode: ThemeMode }>`

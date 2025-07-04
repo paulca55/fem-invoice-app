@@ -1,18 +1,19 @@
 import styled, { css } from 'styled-components';
-import React, { ButtonHTMLAttributes, HTMLAttributes } from 'react';
+import React from 'react';
 import { ThemeMode } from '@/types/themes';
 import { useThemeMode } from '@/contexts/ThemeModeProvider';
 
 type CardProps = {
   children: React.ReactNode;
   hasHover?: boolean;
+  className?: string;
 };
 
-function Card({ children, hasHover = false, ...props }: CardProps) {
+function Card({ children, hasHover = false, className }: CardProps) {
   const { themeMode } = useThemeMode();
 
   return (
-    <StyledContainer $hasHover={hasHover} $mode={themeMode} {...props}>
+    <StyledContainer $hasHover={hasHover} $mode={themeMode} className={className}>
       {children}
     </StyledContainer>
   );

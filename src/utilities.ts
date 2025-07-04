@@ -1,6 +1,5 @@
-// Generate a random single letter from
+// Generate a random string of letters of a given length
 export function randomLetters(length: number): string {
-  // return String.fromCharCode(65 + Math.floor(Math.random() * 26));
   const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
   return Array(length)
@@ -18,8 +17,7 @@ export function generateRandomNumber(length: number) {
 // Generate a random invoice number
 export function generateRandomInvoiceId() {
   // Generate random letters
-
-  const letters = `${randomLetters(1)}${randomLetters(1)}`;
+  const letters = `${randomLetters(2)}`;
 
   // Generate random 4-digit number
   const numbers = generateRandomNumber(4);

@@ -7,23 +7,30 @@ import voca from 'voca';
 import { getStatusType } from '@/helpers/invoice.helpers';
 import { Button } from '@/components/Button';
 import { Stack } from '@/components/Stack';
+import { ThemeMode } from '@/types/themes';
+import { useThemeMode } from '@/contexts/ThemeModeProvider';
+import { PlusIcon } from '@/components/_svg/icons/PlusIcon';
 
 type InvoiceActionsProps = {
   invoice: Invoice;
 };
 
 function InvoiceActions({ invoice }: InvoiceActionsProps) {
+  const { themeMode } = useThemeMode();
+
   return (
     <StyledCard>
       <StatusWrapper>
         <Stack spacing="22px" align={'center'}>
-          <Text>Status</Text>
+          <Text $mode={themeMode}>Status</Text>
           <Status text={voca.titleCase(invoice.status)} variant={getStatusType(invoice.status)} />
         </Stack>
       </StatusWrapper>
 
       <Stack spacing="8px">
-        <Button variant="variant2">Edit</Button>
+        <Button variant="variant2" icon={PlusIcon}>
+          Edit
+        </Button>
         <Button variant="variant4">Delete</Button>
         <Button variant="variant1">Mark as Paid</Button>
       </Stack>
@@ -42,8 +49,8 @@ const StyledCard = styled(Card)`
   padding-inline: 32px;
 `;
 
-const Text = styled.span`
-  color: var(--color-06);
+const Text = styled.p<{ $mode: ThemeMode }>`
+  color: var(${(props) => (props.$mode === 'light' ? '--color-07' : '--color-05')});
 `;
 
 const StatusWrapper = styled.div`

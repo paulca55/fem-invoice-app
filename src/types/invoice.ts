@@ -3,7 +3,7 @@ export type Invoice = {
   invoiceId: string;
   createdAt: string;
   paymentDue: string;
-  description: string;
+  description?: string;
   paymentTerms: number;
   clientName: string;
   clientEmail: string;

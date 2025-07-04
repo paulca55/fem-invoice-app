@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { rem } from 'polished';
-import { StyledHideVisually } from '@/components/styled/StyledVisuallyHidden';
+import { StyledHideVisually } from '@/components/styled';
 
 export type StatusType = 'success' | 'warning' | 'neutral';
 
