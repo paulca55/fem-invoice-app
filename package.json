@@ -6,12 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "dependencies": {
     "dexie": "^3.2.4",
     "dexie-react-hooks": "^1.1.6",
-    "next": "13.4.19",
+    "next": "^13.4.19",
     "polished": "^4.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -24,18 +24,16 @@
     "@types/react-dom": "18.2.7",
     "@types/styled-components": "^5.1.26",
     "@types/voca": "^1.4.4",
-    "eslint": "8.47.0",
-    "eslint-config-next": "13.4.19",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^5.0.0",
+    "eslint": "^9.39.2",
+    "eslint-config-next": "^16.1.6",
+    "eslint-config-prettier": "^10.1.8",
     "new-component": "^5.0.2",
-    "postcss-scss": "^4.0.7",
-    "postcss-styled-syntax": "^0.4.0",
-    "prettier": "^3.0.2",
-    "stylelint": "^15.10.3",
-    "stylelint-config-standard": "^34.0.0",
-    "stylelint-config-styled-components": "^0.1.1",
-    "stylelint-processor-styled-components": "^1.10.0",
+    "prettier": "3.7.4",
+    "stylelint": "^16.26.1",
+    "stylelint-config-standard": "^39.0.1",
     "typescript": "5.1.6"
+  },
+  "engines": {
+    "node": ">=22 <23"
   }
 }
