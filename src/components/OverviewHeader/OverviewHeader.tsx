@@ -5,7 +5,7 @@ import { PlusIcon } from '@/components/_svg/icons/PlusIcon';
 import { addInvoice } from '@/db';
 import { generateRandomInvoiceId } from '@/utilities';
 import { StyledHeadingLg } from '@/components/styled';
-import { ThemeMode } from '@/types/themes';
+import { type ThemeMode } from '@/types/themes';
 import { useThemeMode } from '@/contexts/ThemeModeProvider';
 
 type OverviewHeaderProps = {

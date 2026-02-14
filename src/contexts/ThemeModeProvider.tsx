@@ -1,12 +1,10 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
-import { THEME_MODE, ThemeMode } from '@/types/themes';
+import React, { createContext, useContext, useState } from 'react';
+import { THEME_MODE, type ThemeMode } from '@/types/themes';
 
 // Check local storage and the preferred color scheme media query
 function getInitialColorMode(): ThemeMode {
   if (typeof window !== 'undefined' && window.localStorage) {
-    const persistedColorPreference = window.localStorage.getItem(
-      'theme-mode',
-    ) as ThemeMode | null;
+    const persistedColorPreference = window.localStorage.getItem('theme-mode') as ThemeMode | null;
     const hasPersistedPreference = typeof persistedColorPreference === 'string';
 
     // If the user has explicitly chosen light or dark, let's use it. Otherwise, this value will be null.
@@ -46,11 +44,7 @@ type ThemeModeProviderProps = {
 };
 
 const ThemeModeProvider = ({ children }: ThemeModeProviderProps) => {
-  const [themeMode, setThemeMode] = useState<ThemeMode>(THEME_MODE.light);
-
-  useEffect(() => {
-    setThemeMode(getInitialColorMode());
-  }, []);
+  const [themeMode, setThemeMode] = useState<ThemeMode>(getInitialColorMode());
 
   const toggleThemeMode = () => {
     const nextThemeMode: ThemeMode =
@@ -67,9 +61,7 @@ const ThemeModeProvider = ({ children }: ThemeModeProviderProps) => {
     toggleThemeMode,
   };
 
-  return (
-    <ThemeModeContext.Provider value={contextValue}>{children}</ThemeModeContext.Provider>
-  );
+  return <ThemeModeContext.Provider value={contextValue}>{children}</ThemeModeContext.Provider>;
 };
 
 export function useThemeMode() {

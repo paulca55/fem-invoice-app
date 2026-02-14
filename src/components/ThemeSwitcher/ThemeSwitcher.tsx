@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { HalfMoonIcon } from '@/components/_svg/icons/HalfMoonIcon';
 import { useThemeMode } from '@/contexts/ThemeModeProvider';
 import { SunIcon } from '@/components/_svg/icons/SunIcon';
-import { ThemeMode } from '@/types/themes';
+import { type ThemeMode } from '@/types/themes';
 import { StyledHideVisually } from '@/components/styled';
 
 type AvatarProps = {

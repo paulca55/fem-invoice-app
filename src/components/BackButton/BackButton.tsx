@@ -1,9 +1,9 @@
-import React, { ButtonHTMLAttributes } from 'react';
+import React, { type ButtonHTMLAttributes } from 'react';
 import styled from 'styled-components';
 import { em, rem } from 'polished';
 import { ChevronLeftIcon } from '@/components/_svg/icons/ChevronLeftIcon';
 import { useThemeMode } from '@/contexts/ThemeModeProvider';
-import { ThemeMode } from '@/types/themes';
+import { type ThemeMode } from '@/types/themes';
 
 type BackButtonProps = {
   as?: React.ElementType;
