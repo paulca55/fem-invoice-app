@@ -1,0 +1,40 @@
+name: Linting and formatting
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [ "main" ]
+jobs:
+  Linting:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+      - run: npm ci
+      - run: npx eslint .
+
+      - name: Notify vercel (linting)
+        uses: 'vercel/repository-dispatch/actions/status@v1'
+        with:
+          name: 'Vercel - fem-invoice-app: Linting'
+
+  Formatting:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+      - run: npm ci
+      - run: npx prettier . --check
+
+      - name: Notify vercel (formatting)
+        uses: 'vercel/repository-dispatch/actions/status@v1'
+        with:
+          name: 'Vercel - fem-invoice-app: Formatting'
