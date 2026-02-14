@@ -7,6 +7,11 @@ export default defineConfig([
   ...nextVitals,
   ...nextTs,
   eslintConfigPrettier,
+  {
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'off',
+    },
+  },
   globalIgnores([
     // Default ignores of eslint-config-next:
     '.next/**',

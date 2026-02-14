@@ -1,11 +1,11 @@
-import React, { ReactNode } from 'react';
+import React, { type ReactNode } from 'react';
 import { Card } from '@/components/Card';
 import styled from 'styled-components';
-import { Invoice } from '@/types/invoice';
+import { type Invoice } from '@/types/invoice';
 import { InvoiceId } from '@/components/InvoiceId';
 import { rem } from 'polished';
 import { Spacer } from '@/components/Spacer';
-import { ThemeMode } from '@/types/themes';
+import { type ThemeMode } from '@/types/themes';
 import { useThemeMode } from '@/contexts/ThemeModeProvider';
 
 const INVOICE_META_ITEM_GAP = 10;

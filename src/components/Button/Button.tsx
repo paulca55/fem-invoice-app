@@ -1,22 +1,14 @@
-import React, { ButtonHTMLAttributes } from 'react';
+import React, { type ButtonHTMLAttributes } from 'react';
 import styled, { css } from 'styled-components';
 import { rem } from 'polished';
-import { Icon } from '@/types/icon';
+import { type Icon } from '@/types/icon';
 
 type ButtonType = 'variant1' | 'variant2' | 'variant3' | 'variant4';
-
-function getButtonType(type: ButtonType) {
-  switch (type) {
-    case 'variant1':
-      return StyledButton1;
-    case 'variant2':
-      return StyledButton2;
-    case 'variant3':
-      return StyledButton3;
-    case 'variant4':
-      return StyledButton4;
-  }
-}
+type ButtonComponent =
+  | typeof StyledButton1
+  | typeof StyledButton2
+  | typeof StyledButton3
+  | typeof StyledButton4;
 
 type ButtonProps = {
   variant?: ButtonType;
@@ -34,7 +26,7 @@ function Button({
   children,
   ...props
 }: ButtonProps) {
-  const ButtonComponent = getButtonType(variant);
+  const ButtonComponent = buttonComponents[variant];
 
   return (
     <ButtonComponent type="button" as={as} {...props}>
@@ -126,5 +118,13 @@ const StyledIconWrapper = styled.div`
     width: 10px;
   }
 `;
+
+// Mapping of button types to their corresponding styled components
+const buttonComponents: Record<ButtonType, ButtonComponent> = {
+  variant1: StyledButton1,
+  variant2: StyledButton2,
+  variant3: StyledButton3,
+  variant4: StyledButton4,
+};
 
 export { Button };

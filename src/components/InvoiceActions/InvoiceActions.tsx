@@ -2,12 +2,12 @@ import React from 'react';
 import { Card } from '@/components/Card';
 import styled from 'styled-components';
 import { Status } from '@/components/Status';
-import { Invoice } from '@/types/invoice';
+import { type Invoice } from '@/types/invoice';
 import voca from 'voca';
 import { getStatusType } from '@/helpers/invoice.helpers';
 import { Button } from '@/components/Button';
 import { Stack } from '@/components/Stack';
-import { ThemeMode } from '@/types/themes';
+import { type ThemeMode } from '@/types/themes';
 import { useThemeMode } from '@/contexts/ThemeModeProvider';
 import { PlusIcon } from '@/components/_svg/icons/PlusIcon';
 

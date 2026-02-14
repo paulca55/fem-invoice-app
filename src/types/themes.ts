@@ -1,4 +1,4 @@
-import { DefaultTheme } from 'styled-components';
+import { type DefaultTheme } from 'styled-components';
 import { colors, hslColors } from '@/styles/theme';
 
 export const THEME_MODE = {

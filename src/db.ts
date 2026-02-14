@@ -1,5 +1,5 @@
-import Dexie, { Table } from 'dexie';
-import { Invoice } from '@/types/invoice';
+import Dexie, { type Table } from 'dexie';
+import { type Invoice } from '@/types/invoice';
 
 class MySubClassedDexie extends Dexie {
   // 'invoices' is added by dexie when declaring the stores()

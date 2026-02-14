@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import React from 'react';
-import { ThemeMode } from '@/types/themes';
+import { type ThemeMode } from '@/types/themes';
 import { useThemeMode } from '@/contexts/ThemeModeProvider';
 
 type CardProps = {
@@ -14,7 +14,7 @@ function Card({ children, hasHover = false, className }: CardProps) {
 
   return (
     <StyledContainer $hasHover={hasHover} $mode={themeMode} className={className}>
-      {children}
+            {children}
     </StyledContainer>
   );
 }
