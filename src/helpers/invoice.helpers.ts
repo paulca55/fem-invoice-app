@@ -1,5 +1,5 @@
-import { InvoiceStatus } from '@/types/invoice';
-import { StatusType } from '@/components/Status';
+import { type InvoiceStatus } from '@/types/invoice';
+import { type StatusType } from '@/components/Status';
 
 // Get invoice status type
 function getStatusType(status: InvoiceStatus): StatusType {

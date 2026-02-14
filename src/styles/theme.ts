@@ -1,4 +1,4 @@
-import { Themes } from '@/types/themes';
+import { type Themes } from '@/types/themes';
 
 const hslColors = {
   '01': '252 94% 67%',

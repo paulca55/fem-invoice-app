@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import React from 'react';
-import { ThemeMode } from '@/types/themes';
+import { type ThemeMode } from '@/types/themes';
 import { useThemeMode } from '@/contexts/ThemeModeProvider';
 
 type CardProps = {

@@ -3,17 +3,7 @@ import { rem } from 'polished';
 import { StyledHideVisually } from '@/components/styled';
 
 export type StatusType = 'success' | 'warning' | 'neutral';
-
-function getStatusType(type: StatusType) {
-  switch (type) {
-    case 'neutral':
-      return NeutralStatus;
-    case 'warning':
-      return WarningStatus;
-    case 'success':
-      return SuccessStatus;
-  }
-}
+type StatusComponent = typeof NeutralStatus | typeof WarningStatus | typeof SuccessStatus;
 
 type StatusProps = {
   variant?: StatusType;
@@ -22,7 +12,7 @@ type StatusProps = {
 
 // Component
 function Status({ variant = 'neutral', text }: StatusProps) {
-  const StatusComponent = getStatusType(variant);
+  const StatusComponent = statusComponents[variant];
 
   return (
     <StatusComponent>
@@ -73,5 +63,12 @@ const SuccessStatus = styled.div`
   --background-color: #f3fdfa;
   --color: #33d69f;
 `;
+
+// Mapping of status types to their corresponding styled components
+const statusComponents: Record<StatusType, StatusComponent> = {
+  neutral: NeutralStatus,
+  warning: WarningStatus,
+  success: SuccessStatus,
+};
 
 export { Status };
