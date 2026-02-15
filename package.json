@@ -6,17 +6,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "linter": "eslint .",
-    "formatter": "prettier . --check"
+    "lint": "eslint .",
+    "format": "prettier . --check",
+    "typeCheck": "tsc --noEmit"
   },
   "dependencies": {
     "dexie": "^3.2.4",
     "dexie-react-hooks": "^1.1.6",
-    "next": "^13.4.19",
+    "next": "^13.5.11",
     "polished": "^4.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "styled-components": "^6.0.7",
+    "styled-components": "^6.3.9",
     "voca": "^1.4.1"
   },
   "devDependencies": {
