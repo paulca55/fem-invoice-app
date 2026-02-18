@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { rem } from 'polished';
-import { StyledHideVisually } from '@/components/styled';
+import { StyledHideVisually } from '@/src/components/styled';
 
 export type StatusType = 'success' | 'warning' | 'neutral';
 type StatusComponent = typeof NeutralStatus | typeof WarningStatus | typeof SuccessStatus;

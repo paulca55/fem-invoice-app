@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import React from 'react';
-import { type ThemeMode } from '@/types/themes';
-import { useThemeMode } from '@/contexts/ThemeModeProvider';
+import { type ThemeMode } from '@/src/types/themes';
+import { useThemeMode } from '@/src/contexts/ThemeModeProvider';
 
 type CardProps = {
   children: React.ReactNode;

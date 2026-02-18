@@ -2,7 +2,7 @@
 
 // import original module declarations
 import 'styled-components';
-import { Theme } from '@/types/themes';
+import { Theme } from '@/src/types/themes';
 
 // and extend them!
 declare module 'styled-components' {

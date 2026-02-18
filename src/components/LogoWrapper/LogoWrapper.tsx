@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Logo } from '@/components/_svg/Logo';
-import { breakpoints } from '@/constants';
+import { Logo } from '@/src/components/_svg/Logo';
+import { breakpoints } from '@/src/constants';
 import Link from 'next/link';
 
 function LogoWrapper() {

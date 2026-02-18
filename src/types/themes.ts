@@ -1,5 +1,5 @@
 import { type DefaultTheme } from 'styled-components';
-import { colors, hslColors } from '@/styles/theme';
+import { colors, hslColors } from '@/src/styles/theme';
 
 export const THEME_MODE = {
   light: 'light',

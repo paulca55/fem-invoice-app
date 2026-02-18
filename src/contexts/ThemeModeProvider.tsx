@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
-import { THEME_MODE, type ThemeMode } from '@/types/themes';
+import { THEME_MODE, type ThemeMode } from '@/src/types/themes';
 
 // Check local storage and the preferred color scheme media query
 function getInitialColorMode(): ThemeMode {

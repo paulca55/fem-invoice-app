@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import { BackButton } from '@/components/BackButton';
+import { BackButton } from '@/src/components/BackButton';
 import { useRouter } from 'next/router';
-import { InvoiceActions } from '@/components/InvoiceActions';
+import { InvoiceActions } from '@/src/components/InvoiceActions';
 import { useLiveQuery } from 'dexie-react-hooks';
-import { db } from '@/db';
-import { Spacer } from '@/components/Spacer';
-import { InvoiceDetails } from '@/components/InvoiceDetails';
+import { db } from '@/src/db';
+import { Spacer } from '@/src/components/Spacer';
+import { InvoiceDetails } from '@/src/components/InvoiceDetails';
 
 function InvoicePage() {
   const router = useRouter();
