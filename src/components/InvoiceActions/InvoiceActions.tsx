@@ -1,15 +1,15 @@
 import React from 'react';
-import { Card } from '@/components/Card';
+import { Card } from '@/src/components/Card';
 import styled from 'styled-components';
-import { Status } from '@/components/Status';
-import { type Invoice } from '@/types/invoice';
+import { Status } from '@/src/components/Status';
+import { type Invoice } from '@/src/types/invoice';
 import voca from 'voca';
-import { getStatusType } from '@/helpers/invoice.helpers';
-import { Button } from '@/components/Button';
-import { Stack } from '@/components/Stack';
-import { type ThemeMode } from '@/types/themes';
-import { useThemeMode } from '@/contexts/ThemeModeProvider';
-import { PlusIcon } from '@/components/_svg/icons/PlusIcon';
+import { getStatusType } from '@/src/helpers/invoice.helpers';
+import { Button } from '@/src/components/Button';
+import { Stack } from '@/src/components/Stack';
+import { type ThemeMode } from '@/src/types/themes';
+import { useThemeMode } from '@/src/contexts/ThemeModeProvider';
+import { PlusIcon } from '@/src/components/_svg/icons/PlusIcon';
 
 type InvoiceActionsProps = {
   invoice: Invoice;

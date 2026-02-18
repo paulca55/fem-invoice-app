@@ -1,15 +1,15 @@
 import type { AppProps } from 'next/app';
-import { GlobalStyle } from '@/styles/GlobalStyle';
+import { GlobalStyle } from '@/src/styles/GlobalStyle';
 import React from 'react';
-import { ThemeModeProvider } from '@/contexts/ThemeModeProvider';
-import { ThemeWrapper } from '@/components/ThemeWrapper';
+import { ThemeModeProvider } from '@/src/contexts/ThemeModeProvider';
 import { League_Spartan } from 'next/font/google';
-import { Sidebar } from '@/components/Sidebar';
+import { Sidebar } from '@/src/components/Sidebar';
 import styled from 'styled-components';
-import { breakpoints } from '@/constants';
-import { db } from '@/db';
-import { generateRandomInvoiceId } from '@/utilities';
+import { breakpoints } from '@/src/constants';
+import { db } from '@/src/db';
+import { generateRandomInvoiceId } from '@/src/utilities';
 import { rem } from 'polished';
+import { ThemeWrapper } from '@/src/components/ThemeWrapper';
 
 const leagueSpartan = League_Spartan({ subsets: ['latin'] });
 

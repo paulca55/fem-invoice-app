@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { type Invoice } from '@/types/invoice';
+import { type Invoice } from '@/src/types/invoice';
 import { InvoiceListItem } from './InvoiceListItem';
 
 type InvoiceListProps = {

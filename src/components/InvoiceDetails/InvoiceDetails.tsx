@@ -1,12 +1,12 @@
 import React, { type ReactNode } from 'react';
-import { Card } from '@/components/Card';
+import { Card } from '@/src/components/Card';
 import styled from 'styled-components';
-import { type Invoice } from '@/types/invoice';
-import { InvoiceId } from '@/components/InvoiceId';
+import { type Invoice } from '@/src/types/invoice';
+import { InvoiceId } from '@/src/components/InvoiceId';
 import { rem } from 'polished';
-import { Spacer } from '@/components/Spacer';
-import { type ThemeMode } from '@/types/themes';
-import { useThemeMode } from '@/contexts/ThemeModeProvider';
+import { Spacer } from '@/src/components/Spacer';
+import { type ThemeMode } from '@/src/types/themes';
+import { useThemeMode } from '@/src/contexts/ThemeModeProvider';
 
 const INVOICE_META_ITEM_GAP = 10;
 

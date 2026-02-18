@@ -1,30 +1,52 @@
 {
   "compilerOptions": {
-    "target": "es2022",
-    "lib": ["dom", "dom.iterable", "es2022"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
+    // The version of JavaScript you're targeting.
+    "target": "ES2017",
+    // Tells TypeScript what module syntax to use.
     "module": "esnext",
-    "moduleResolution": "bundler",
+    // Enable module resolution without file extensions on relative paths, for things like npm package imports.
+    "moduleResolution": "Bundler",
+    // Allow importing TypeScript files using their native extension (.ts(x)).
+    "allowImportingTsExtensions": true,
+    // Enable JSON imports.
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "moduleDetection": "force",
+    // Enforce the usage of `import type` and `export type`, leading to more predictable behavior and fewer unnecessary imports.
     "verbatimModuleSyntax": true,
+    // This option prevents a few TS features which are unsafe when treating modules as isolated files.
+    "isolatedModules": true,
+    // Astro directly run TypeScript code, no transpilation needed.
+    "noEmit": true,
+    // Report an error when importing a file using a casing different from another import of the same file.
+    "forceConsistentCasingInFileNames": true,
+    // Properly support importing CJS modules in ESM.
+    "esModuleInterop": true,
+    // Skip typechecking libraries and .d.ts files.
+    "skipLibCheck": true,
+    // Allow JavaScript files to be imported.
+    "allowJs": true,
+    // Allow JSX files (or files that are internally considered JSX, like Astro files) to be imported inside `.js` and `.ts` files.
+    "jsx": "preserve",
+    // Specifies the target runtime environment.
+    "lib": ["dom", "dom.iterable", "esnext"],
+    // Enable strict mode. This enables a few options at a time, see https://www.typescriptlang.org/tsconfig#strict for a list.
+    "strict": true,
+    // Enables incremental compilation, which can improve build times by only re-checking files that have changed.
+    "incremental": true,
+    // This option forces TypeScript to consider all files as modules. This helps to avoid 'cannot redeclare block-scoped variable' errors.
+    "moduleDetection": "force",
+    // Prevents you from accessing an array or object without first checking if it's defined. This is a great way to prevent runtime errors, and should really be included in strict.
     "noUncheckedIndexedAccess": true,
+    // Makes the override keyword actually useful in classes.
     "noImplicitOverride": true,
+    // Enable path mapping for the `@` alias.
+    "paths": {
+      "@/*": ["./*"]
+    },
     "plugins": [
       {
         "name": "next"
       }
-    ],
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    ]
   },
   "include": [
     "next-env.d.ts",
