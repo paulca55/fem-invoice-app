@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import { Button } from '@/src/components/Button';
-import { PlusIcon } from '@/src/components/_svg/icons/PlusIcon';
-import { addInvoice } from '@/src/db';
-import { generateRandomInvoiceId } from '@/src/utilities';
-import { StyledHeadingLg } from '@/src/components/styled';
-import { type ThemeMode } from '@/src/types/themes';
-import { useThemeMode } from '@/src/contexts/ThemeModeProvider';
+import { Button } from '@/components/Button';
+import { PlusIcon } from '@/components/_svg/icons/PlusIcon';
+import { addInvoice } from '@/db';
+import { generateRandomInvoiceId } from '@/utilities';
+import { StyledHeadingLg } from '@/components/styled';
+import { type ThemeMode } from '@/types/themes';
+import { useThemeMode } from '@/contexts/ThemeModeProvider';
 
 type OverviewHeaderProps = {
   heading: string;

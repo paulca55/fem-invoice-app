@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { rem } from 'polished';
-import { StyledHideVisually } from '@/src/components/styled';
+import { StyledHideVisually } from '@/components/styled';
 
 type InvoiceIdProps = {
   id: string;

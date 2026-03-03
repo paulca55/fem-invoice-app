@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { OverviewHeader } from '@/src/components/OverviewHeader';
-import { InvoiceList } from '@/src/components/InvoiceList';
+import { OverviewHeader } from '@/components/OverviewHeader';
+import { InvoiceList } from '@/components/InvoiceList';
 import { useLiveQuery } from 'dexie-react-hooks';
-import { db } from '@/src/db';
-import { Empty } from '@/src/components/Empty/Empty';
+import { db } from '@/db';
+import { Empty } from '@/components/Empty/Empty';
 
 function HomePage() {
   const invoices = useLiveQuery(() => db.invoices.toArray());

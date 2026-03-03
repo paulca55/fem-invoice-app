@@ -40,7 +40,14 @@
     "noImplicitOverride": true,
     // Enable path mapping for the `@` alias.
     "paths": {
-      "@/*": ["./*"]
+      "@/components/*": ["./src/components/*"],
+      "@/contexts/*": ["./src/contexts/*"],
+      "@/styles/*": ["./src/styles/*"],
+      "@/types/*": ["./src/types/*"],
+      "@/helpers/*": ["./src/helpers/*"],
+      "@/utilities": ["./src/utilities.ts"],
+      "@/db": ["./src/db.ts"],
+      "@/constants": ["./src/constants.ts"]
     },
     "plugins": [
       {

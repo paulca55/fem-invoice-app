@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { LogoWrapper } from '@/src/components/LogoWrapper';
-import { Avatar } from '@/src/components/Avatar';
-import { ThemeSwitcher } from '@/src/components/ThemeSwitcher';
-import { breakpoints } from '@/src/constants';
+import { LogoWrapper } from '@/components/LogoWrapper';
+import { Avatar } from '@/components/Avatar';
+import { ThemeSwitcher } from '@/components/ThemeSwitcher';
+import { breakpoints } from '@/constants';
 
 function Sidebar() {
   return (
