@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { breakpoints } from '@/src/constants';
+import { breakpoints } from '@/constants';
 
 type AvatarProps = {
   imageSource: string;

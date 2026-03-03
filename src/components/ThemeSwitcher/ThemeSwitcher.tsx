@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { HalfMoonIcon } from '@/src/components/_svg/icons/HalfMoonIcon';
-import { useThemeMode } from '@/src/contexts/ThemeModeProvider';
-import { SunIcon } from '@/src/components/_svg/icons/SunIcon';
-import { type ThemeMode } from '@/src/types/themes';
-import { StyledHideVisually } from '@/src/components/styled';
+import { HalfMoonIcon } from '@/components/_svg/icons/HalfMoonIcon';
+import { useThemeMode } from '@/contexts/ThemeModeProvider';
+import { SunIcon } from '@/components/_svg/icons/SunIcon';
+import { type ThemeMode } from '@/types/themes';
+import { StyledHideVisually } from '@/components/styled';
 
 type AvatarProps = {
   size?: number;

@@ -1,7 +1,7 @@
-import { themes } from '@/src/styles/theme';
+import { themes } from '@/styles/theme';
 import { ThemeProvider } from 'styled-components';
 import React from 'react';
-import { useThemeMode } from '@/src/contexts/ThemeModeProvider';
+import { useThemeMode } from '@/contexts/ThemeModeProvider';
 
 type ThemeWrapperProps = {
   children: React.ReactNode;

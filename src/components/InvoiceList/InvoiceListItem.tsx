@@ -1,18 +1,18 @@
 import React, { useRef } from 'react';
-import { Status } from '@/src/components/Status';
-import { Card } from '@/src/components/Card';
+import { Status } from '@/components/Status';
+import { Card } from '@/components/Card';
 import voca from 'voca';
 import styled from 'styled-components';
-import { type Invoice } from '@/src/types/invoice';
-import { ChevronRightIcon } from '@/src/components/_svg/icons/ChevronRightIcon';
+import { type Invoice } from '@/types/invoice';
+import { ChevronRightIcon } from '@/components/_svg/icons/ChevronRightIcon';
 import { rem } from 'polished';
-import { formattedCurrency } from '@/src/utilities';
+import { formattedCurrency } from '@/utilities';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { type ThemeMode } from '@/src/types/themes';
-import { useThemeMode } from '@/src/contexts/ThemeModeProvider';
-import { getStatusType } from '@/src/helpers/invoice.helpers';
-import { InvoiceId } from '@/src/components/InvoiceId';
+import { type ThemeMode } from '@/types/themes';
+import { useThemeMode } from '@/contexts/ThemeModeProvider';
+import { getStatusType } from '@/helpers/invoice.helpers';
+import { InvoiceId } from '@/components/InvoiceId';
 
 // Constants
 const urlPath = '/invoice/';
