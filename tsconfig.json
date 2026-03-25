@@ -14,7 +14,7 @@
     "verbatimModuleSyntax": true,
     // This option prevents a few TS features which are unsafe when treating modules as isolated files.
     "isolatedModules": true,
-    // Astro directly run TypeScript code, no transpilation needed.
+    // Don't emit any output, since we're only using TypeScript for type checking and not for transpilation.
     "noEmit": true,
     // Report an error when importing a file using a casing different from another import of the same file.
     "forceConsistentCasingInFileNames": true,
@@ -24,7 +24,7 @@
     "skipLibCheck": true,
     // Allow JavaScript files to be imported.
     "allowJs": true,
-    // Allow JSX files (or files that are internally considered JSX, like Astro files) to be imported inside `.js` and `.ts` files.
+    // Allow JSX files to be imported and preserve their JSX syntax for further processing by other tools.
     "jsx": "preserve",
     // Specifies the target runtime environment.
     "lib": ["dom", "dom.iterable", "esnext"],
@@ -36,8 +36,22 @@
     "moduleDetection": "force",
     // Prevents you from accessing an array or object without first checking if it's defined. This is a great way to prevent runtime errors, and should really be included in strict.
     "noUncheckedIndexedAccess": true,
-    // Makes the override keyword actually useful in classes.
+    // Ensures that all overrides in classes are explicitly marked with the `override` keyword
     "noImplicitOverride": true,
+    // Disallow unused local variables
+    "noUnusedLocals": true,
+    // Disallow unused parameters in functions
+    "noUnusedParameters": true,
+    // Disallow unused labels
+    "allowUnusedLabels": false,
+    // Prevent incorrect imports when the module only includes side effects and doesn't export anything.
+    "noUncheckedSideEffectImports": true,
+    // Disallow fallthrough between switch cases, which can lead to unexpected behavior if not intentional.
+    "noFallthroughCasesInSwitch": true,
+    // Disallow unreachable code after return, throw, continue, and break statements.
+    "allowUnreachableCode": false,
+    // Do not allow runtime constructs that are not part of ECMAScript (such as `namespace` and `enum`).
+    "erasableSyntaxOnly": true,
     // Enable path mapping for the `@` alias.
     "paths": {
       "@/components/*": ["./src/components/*"],
