@@ -34,9 +34,7 @@
     "allowJs": true,
 
     // Editor Support
-    "plugins": [
-      {"name": "next"}
-    ],
+    "plugins": [{ "name": "next" }],
 
     // Interop Constraints
     "erasableSyntaxOnly": true,
