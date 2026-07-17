@@ -1,58 +1,20 @@
 {
   "compilerOptions": {
-    // The version of JavaScript you're targeting.
-    "target": "ES2017",
-    // Tells TypeScript what module syntax to use.
-    "module": "esnext",
-    // Enable module resolution without file extensions on relative paths, for things like npm package imports.
-    "moduleResolution": "Bundler",
-    // Allow importing TypeScript files using their native extension (.ts(x)).
-    "allowImportingTsExtensions": true,
-    // Enable JSON imports.
-    "resolveJsonModule": true,
-    // Enforce the usage of `import type` and `export type`, leading to more predictable behavior and fewer unnecessary imports.
-    "verbatimModuleSyntax": true,
-    // This option prevents a few TS features which are unsafe when treating modules as isolated files.
-    "isolatedModules": true,
-    // Don't emit any output, since we're only using TypeScript for type checking and not for transpilation.
-    "noEmit": true,
-    // Report an error when importing a file using a casing different from another import of the same file.
-    "forceConsistentCasingInFileNames": true,
-    // Properly support importing CJS modules in ESM.
-    "esModuleInterop": true,
-    // Skip typechecking libraries and .d.ts files.
-    "skipLibCheck": true,
-    // Allow JavaScript files to be imported.
-    "allowJs": true,
-    // Allow JSX files to be imported and preserve their JSX syntax for further processing by other tools.
-    "jsx": "preserve",
-    // Specifies the target runtime environment.
-    "lib": ["dom", "dom.iterable", "esnext"],
-    // Enable strict mode. This enables a few options at a time, see https://www.typescriptlang.org/tsconfig#strict for a list.
-    "strict": true,
-    // Enables incremental compilation, which can improve build times by only re-checking files that have changed.
-    "incremental": true,
-    // This option forces TypeScript to consider all files as modules. This helps to avoid 'cannot redeclare block-scoped variable' errors.
-    "moduleDetection": "force",
-    // Prevents you from accessing an array or object without first checking if it's defined. This is a great way to prevent runtime errors, and should really be included in strict.
-    "noUncheckedIndexedAccess": true,
-    // Ensures that all overrides in classes are explicitly marked with the `override` keyword
-    "noImplicitOverride": true,
-    // Disallow unused local variables
-    "noUnusedLocals": true,
-    // Disallow unused parameters in functions
-    "noUnusedParameters": true,
-    // Disallow unused labels
-    "allowUnusedLabels": false,
-    // Prevent incorrect imports when the module only includes side effects and doesn't export anything.
-    "noUncheckedSideEffectImports": true,
-    // Disallow fallthrough between switch cases, which can lead to unexpected behavior if not intentional.
-    "noFallthroughCasesInSwitch": true,
-    // Disallow unreachable code after return, throw, continue, and break statements.
+    // Type Checking
     "allowUnreachableCode": false,
-    // Do not allow runtime constructs that are not part of ECMAScript (such as `namespace` and `enum`).
-    "erasableSyntaxOnly": true,
-    // Enable path mapping for the `@` alias.
+    "allowUnusedLabels": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+
+    // Modules
+    "allowImportingTsExtensions": true,
+    "module": "esnext",
+    "moduleResolution": "Bundler",
+    "noUncheckedSideEffectImports": true,
     "paths": {
       "@/components/*": ["./src/components/*"],
       "@/contexts/*": ["./src/contexts/*"],
@@ -63,11 +25,37 @@
       "@/db": ["./src/db.ts"],
       "@/constants": ["./src/constants.ts"]
     },
+    "resolveJsonModule": true,
+
+    // Emit
+    "noEmit": true,
+
+    // JavaScript Support
+    "allowJs": true,
+
+    // Editor Support
     "plugins": [
-      {
-        "name": "next"
-      }
+      {"name": "next"}
     ]
+
+    // Interop Constraints
+    "erasableSyntaxOnly": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+
+    // Language and Environment
+    "jsx": "preserve",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "moduleDetection": "force",
+    "target": "ES2017",
+
+    // Projects
+    "incremental": true,
+
+    // Completeness
+    "skipLibCheck": true
   },
   "include": [
     "next-env.d.ts",
